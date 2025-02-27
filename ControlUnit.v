@@ -1,7 +1,7 @@
 module controlU(
+    input clk,
     input [6:0] opcode,
     input reset,
-    input clk,
     output reg PCWriteCond, PCWrite, IorD, PCSource, MemRead, MemWrite, MemtoReg, IRWrite, RegWrite, ALUSrcA,
     output reg [1:0] ALUOp, ALUSrcB 
     
