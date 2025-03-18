@@ -6,12 +6,17 @@ module controlU(
     output reg [1:0] ALUOp, ALUSrcB 
     
 );
-    typedef enum reg[3:0]{
 
-        IF,ID, MA, MEM_R, MRCS, MEM_W, EX, RT, BC
-    }state_t;
-
-    state_t curr_state, next_state;
+    parameter [3:0] IF = 4'b0000;
+                    ID = 4'b0001;
+                    MA = 4'b0010;
+                    MEM_R = 4'b0011;
+                    MRCS = 4'b0100;
+                    MEM_W = 4'b0101;
+                    EX = 4'b0110;
+                    RT = 4'b0111;
+                    BC = 4'b 1000;
+    reg[3:0] curr_state, next_state;
 
     //State transition Logic 
     always@(posedge clk or posedge reset)begin
